@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './component.css';
- 
+
 class BouncingBox extends Component {
   render() {
-    return <div className="bouncing-box" />;
+    return <div className="bouncing-box" style={{left: this.props.position}}>
+    {this.props.points}
+    </div>;
   }
 }
  
