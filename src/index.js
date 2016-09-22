@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
+import {setState, tick} from './action_creators';
 import App from './App';
 import './index.css';
 
 const store = createStore(reducer);
-store.dispatch({
-  type: 'SET_STATE',
-  state: {
-    position: 40,
-    points: 5,
-    speed: 10,
+const initialState = {
+    position: 0,
+    points: 0,
+    speed: 5,
     direction: 1,
-  },
-});
+  };
+store.dispatch(setState(initialState));
+
 setInterval(() => {
-  store.dispatch({ type: 'TICK' })
+  store.dispatch(tick())
 },100);
 
 ReactDOM.render(
