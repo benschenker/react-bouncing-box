@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import './component.css';
 
-class BouncingBox extends Component {
+export class BouncingBox extends Component {
   render() {
     return <div className="bouncing-box" style={{left: this.props.position}}>
     {this.props.points}
@@ -9,4 +10,11 @@ class BouncingBox extends Component {
   }
 }
  
-export default BouncingBox; // Don’t forget to use export default!
+function mapStateToProps(state) {
+  return {
+    position: state.getIn(['position']),
+    points: state.get('points')
+  };
+}
+
+export const BouncingBoxContainer = connect(mapStateToProps)(BouncingBox);
