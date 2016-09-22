@@ -13,8 +13,9 @@ export default function(state = Map(), action) {
     const speed = state.getIn(['speed']);
     const direction = state.getIn(['direction']);
     const newPosition = oldPosition + speed * direction;
+    const width = document.getElementById("root").clientWidth;
     let newDirection = direction;
-    if (newPosition <= 0 || newPosition >= 600) {
+    if (newPosition <= 0 || newPosition >= width - 50) {
       newDirection *= -1;
     }
     const newState = {
