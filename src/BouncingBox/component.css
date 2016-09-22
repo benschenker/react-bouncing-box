@@ -1,0 +1,15 @@
+div.bouncing-box {
+  background-color: teal;
+  border: 1px solid gray;
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 200%;
+  color: white;
+  text-align: center;
+
+  /*position the box*/
+  position: absolute;
+  top: 100px;
+  left: 30px;
+}
