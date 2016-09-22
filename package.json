@@ -2,6 +2,8 @@
   "name": "react-bouncing-box",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://benschenker.github.io/react-bouncing-box",
+
   "devDependencies": {
     "react-scripts": "0.4.3"
   },
