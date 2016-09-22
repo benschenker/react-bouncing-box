@@ -12,8 +12,13 @@ store.dispatch({
   state: {
     position: 40,
     points: 5,
+    speed: 10,
+    direction: 1,
   },
 });
+setInterval(() => {
+  store.dispatch({ type: 'TICK' })
+},100);
 
 ReactDOM.render(
     <Provider store={store}>
